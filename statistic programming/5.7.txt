@@ -1,0 +1,78 @@
+#numpy ndarray
+import numpy as np 
+a = np.array([1, 2, 3])
+a
+
+type(a)
+
+print(a)
+
+'''
+ndim 차원의 크기
+shape 형태, 행의 개수와 열의 갯수
+dtype 데이터타입
+'''
+a.ndim
+
+a.shape
+
+len(a)
+
+a.dtype
+
+#array 생성
+identify(n)
+
+zeros((n,m))
+
+ones((n,m))
+
+full((n.m),q)
+
+diag(v, k)
+
+random.random(n,m)
+
+arange(n)
+
+linspace(a,b,n)
+
+#reshape
+h = np.array(range(15))
+h
+h2 = h.reshape(3,5)
+h2
+print(h)
+print(h2)
+print(id(h))
+print(id(h2))
+
+v = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+M = v.reshape(2, -1)
+M
+'''
+-1은 열 관계x 행에 중점
+'''
+
+np.random.rand(4)
+np.random.randn(4)
+
+#computing speed
+import random
+N = 1000000
+%timeit sample1 = [random.random() for _ in range(N)]
+%timeit sample2 = np.random.rand(N)
+
+#Indexing and slicing
+v = np.array([1, 2, 3, 4, 5, 6])
+v[1:5:2]
+
+v[::-1]  # 순서 뒤집기
+
+'''
+M[i, j] : i번째 행, j번째 열에 해당하는 원소
+M[i, :] : i번째 행 벡터
+M[:, j] : j번째 열 벡터
+M[a:b, :] : 행을 a:b로 slicing한 행렬
+M[a:b, c:d] : 행을 a:b로, 열을 c:d로 slicing한 행렬
+'''

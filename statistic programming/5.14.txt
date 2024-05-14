@@ -1,0 +1,102 @@
+'''
+벡터연산
+'''
+
+#합과 차
+a = np.array([3,1,-1])
+b = np.arange(3)
+c = a + b
+d = b - a
+
+#곱
+4 * a
+
+#제곱합
+np.sum(a**2)
+
+#내적
+np.dot(a, b)
+a @ b
+
+#벡터 사이의 거리
+np.linalg.norm(a-b)
+
+#transpose
+M = np.array([[1,2], [3,4]])
+M
+M = np.array([[1,2], [3,4]])
+
+M.T
+
+#행렬식
+np.linalg.det(M)
+
+#역행렬
+np.linalg.inv(M)
+
+#해 찾기
+c = np.array([2,1])
+np.linalg.solve(M, c)
+
+'''
+함수 단원에서 살펴보았던 농장 문제를 해 찾기를 이용하여 해결할 수 있다.  
+예) 돼지와 닭의 총 수가 20마리이며 총 다리의 숫자가 60개일 때, 돼지와 닭은 각각 몇 마리인가?
+ x + y = 20,  4 x + 2 y = 60 
+`np.linalg.solve`를 이용하여 답을 구하여 보라.
+'''
+
+# 행렬간의 곱
+N = np.array([[-1,1],[2,1]])
+N
+np.matmul(M,Na)
+
+#2차원일때
+M.dot(N)
+M @ N
+
+#행렬과 벡터 간에 ```np.dot()``` 혹은 ```@```를 이용하면 행렬과 벡터의 곱이다.
+v = np.array([1., 2.])
+np.dot(M, v) # np.dot(v,M)하면 다른값
+M @ v
+
+#Universal function
+np.array([True, False, True]) &  np.array([True, True, False])
+
+#Concatenation, Stacking
+np.r_[np.array([1,2,3]), 0, 0, np.array([4,5,6])]
+
+A = np.array([[1,2],[3,4]])
+B = np.array([[5,6],[7,8]])
+np.r_[A, B]
+
+'''
+hstack : 수평방향
+vstack : 수직방향
+column_stack : 컬럼들로
+'''
+a = np.array((1,2,3))
+b = np.array((4,5,6))
+np.hstack((a,b))
+
+a = np.array([[1],[2],[3]])
+b = np.array([[4],[5],[6]])
+np.hstack((a,b))
+
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+np.vstack((a,b))
+
+a = np.array((1,2,3))
+b = np.array((2,3,4))
+np.column_stack((a,b))
+
+
+```concatenate```함수를 이용할 수도 있다. ```axis```를 조정하여 어떤 방향으로 쌓을지 정한다.
+
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6]])
+np.concatenate((a, b), axis=0)
+
+np.concatenate((a, b.T), axis=1)
+
+np.concatenate((a, b), axis=None)

@@ -1,0 +1,96 @@
+#matplotlib parctice
+
+import pandas as pd
+import matplotlib.pyplot as plt
+breakdown = [2,1,3,0,1,1,0,2,1,0,2,1,0,2,0,1,0,1,0,2,4,5,1,0,3]
+days=[]
+for d in range(1,26) :
+  days.append(d)
+ps = pd.Series(breakdown, index=days)
+plt.title('Number of vending machine breakdwown')
+plt.xlabel('days')
+plt.ylabel('number of breakdown')
+plt.bar(days, ps)
+
+#pt2
+import matplotlib.pyplot as plt
+plt.title('abc')
+xdata = [10,20,30,40]
+ydata = [2,4,6,8]
+plt.plot(xdata, ydata, color='y',label = '1-line', linestyle=':', marker='^', markersize='7')
+plt.xlim(0.60)
+plt.ylim(0,10)
+plt.legend()
+plt.show(0)
+
+#
+data1=[]
+data2=[]
+plt.plot(data1, label='')
+plt.legend #범주
+plt.xlabel=('') #x축 이름
+plt.plot(data1, color='', linestyle='', marker='', markersize='') #색상, 선 종류, 마킹
+'''
+cyan
+black
+white
+blue
+yellow
+magenta
+green
+red
+-----------
+o = circle
+v = reverse rectangular
+^ = rectangular
+s = square
++ = plus
+. = dot
+'''
+
+#kind
+'''
+line = 선
+bar = 수직막대
+barh = 수평막대
+hist = 히스토그램
+box = 상자수염
+kde = 커널밀도
+area = 면적
+pie = 파이
+scatter = 산점도
+hexbin = 고밀도산점도
+'''
+
+#kind example
+import pandas as pd
+my_score=[[60,90,95],[90,75,100],[65,85,90],[85,70,90],[95,90,85],[75,85,90],[85,80,75]]
+subject = ['kor', 'math', 'eng']
+df = pd.DataFrame(my_scorem colums=subject)
+df.plot(kind='line') #hist, box...
+
+#kind='line' pt
+
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.read_excel('/content/drive/MyDrive/Colab Notebooks/fine_dust.xlsx', index_col='area')
+data2019 = data[2019]
+plt.figure(figsize=(15,4))
+plt.plot(data2019, color='m', marker='o', markersize='15')
+plt.xlabel('area')
+plt.ylabel('micrometer')
+plt.title('2019 Fine Dust Line Graph')
+plt.grid()
+plt.show()
+
+plt.figure(figsize=(15,4))
+
+for year in range(2016, 2020):
+  chartdata = data[year]
+  plt.plot(chartdata, marker='o', label=year)
+plt.xlabel('area')
+plt.ylabel('micrometer')
+plt.title('2001~2019 Fien Dust Line Graph')
+plt.legend()
+plt.grid()
+plt.show()
